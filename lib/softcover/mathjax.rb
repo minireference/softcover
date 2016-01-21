@@ -29,7 +29,7 @@ module Softcover
           availableFonts: ["TeX"],
         },
         TeX: {
-          extensions: ["AMSmath.js", "AMSsymbols.js", "color.js"],
+          extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "cancel.js", "mhchem.js"],
           equationNumbers: {
             autoNumber: "AMS",
             #{fn}
@@ -37,6 +37,7 @@ module Softcover
           Macros: {
             PolyTeX:    "Poly{\\\\TeX}",
             PolyTeXnic: "Poly{\\\\TeX}nic",
+            texttt: ['{#1}',1],
             #{custom_macros}
           }
         },

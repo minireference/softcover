@@ -69,7 +69,7 @@ module Softcover
       <dc:language>en</dc:language>
       <dc:rights>Copyright (c) #{copyright} #{escape(author)}</dc:rights>
       <dc:creator>#{escape(author)}</dc:creator>
-      <dc:publisher>Softcover</dc:publisher>
+      <dc:publisher>Minireference Co.</dc:publisher>
       <dc:identifier id="BookID">urn:uuid:#{uuid}</dc:identifier>
       <meta property="dcterms:modified">#{Time.now.strftime('%Y-%m-%dT%H:%M:%S')}Z</meta>
       #{cover_meta}

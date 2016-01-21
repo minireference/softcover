@@ -246,6 +246,7 @@ module Softcover
           @html = chapter.nodes.map(&:to_xhtml).join("\n")
           @mathjax = Softcover::Mathjax::config(chapter_number: n)
           @src     = Softcover::Mathjax::AMS_SVG
+          @title = chapter.menu_heading.strip
           file_content = ERB.new(erb_file).result(binding)
           f.write(file_content)
         end
