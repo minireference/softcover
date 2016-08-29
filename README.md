@@ -8,21 +8,48 @@ For more details about Softcover, see [*The Softcover Book*](http://manual.softc
 
 ## Installation
 
-    $ gem install softcover
+The following steps assume the machine is a Mac, with an installed `Command Line Tools` (<200MB,
+choose the package for the right version of Mac OS) from https://developer.apple.com/download/more/
+(requires an Apple ID to login). The command line tools are needed to install `ruby`,
+which in turn is needed to install `softcover`:
 
-On some systems, you may need to add an extra option to handle SSL correctly:
-
-    $ gem install softcover -- --with-cppflags=-I/usr/local/opt/openssl/include
+  - Install [homebrew](http://brew.sh/) (a package manager for Mac)
+        
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        
+  - Install a newer version of `ruby` using homebrew  (20 mins)
+        
+        brew install ruby
+        
+    Note version of ruby is installed `2.X.Y` or run `brew info ruby` to check.
+    
+  - Modify (or create) the file `~/.bash_profile` to give homebrew's ruby commands priority over the system ruby.
+    Need to add the following lines to this file:
+        
+        export PATH=/usr/local/Cellar/ruby/2.X.Y/bin:$PATH
+        
+  - Install bundler (some ruby installer thing)
+        
+        gem install bundler
+        
+  - Clone the `minireference/softcover` repo using
+        
+        cd temporary/project/directory/
+        git clone https://github.com/minireference/softcover.git
+        
+  - Install softcover dependencies, and softcover itself (10 mins)
+        
+        cd softcover
+        bundle install
+        bundle exec rake install      
+        
+  - Test softcover command line exists:
+        
+        softcover help
 
 Then install the dependencies as described [here](http://manual.softcover.io/book/getting_started#sec-installing_softcover).
 
-## Usage
 
-Run
-
-    $ softcover help
-
-for a list of supported commands.
 
 ## Adding a precompiled binary
 
