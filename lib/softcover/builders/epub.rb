@@ -334,7 +334,11 @@ module Softcover
           # Settings for texmath images in ePub / mobi
           ex2em_height_scaling = 0.51     # =1ex/1em for math png height
           ex2em_valign_scaling = 0.481482 # =1ex/1em for math png vertical-align
-          ex2px_scale_factor   = 20       # =1ex/1px scaling for SVG-->PNG conv.
+          ex2px_scale_factor   = 12       # =1ex/1px scaling for SVG-->PNG conv
+          # The `ex2px_scale_factor` setting controls the quality of textmath:
+          #  - 20: high-res images that look great even zoomed, but large size
+          #  - 12: good compromise between quality and image size
+          #  -  8: very small size, but noticeable pixelization
           # These are used a three-step process below: Compute, Convert, Replace
           # STEP1: compute height and vertical-align in `ex` units
           svg_height_in_ex = Float(svg_height.gsub('ex',''))
@@ -355,13 +359,14 @@ module Softcover
           end
           # STEP2: Generate PNG from each SVG (unless PNG exists already).
           unless File.exist?(png_filename)
+            h = (ex2px_scale_factor * svg_height_in_ex).round # PNG height in px
             unless options[:silent] || options[:quiet]
               puts "Creating #{png_filename}"
             end
             # Generate png from the MathJax_SVG using Inkscape
-            # Use the -d option to get a sensible size:
-            #   Resolution for bitmaps and rasterized filters
-            cmd = "#{inkscape} #{svg_abspath} -o #{png_abspath} -d 2"
+            # Use the -h option to get image with desired height (in pixels)
+            quality of resulting  high-res image (at the cost of file size)
+            cmd = "#{inkscape} #{svg_abspath} -o #{png_abspath} -h #{h}"
             if options[:silent]
               silence { silence_stream(STDERR) { system cmd } }
             else
