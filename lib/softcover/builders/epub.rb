@@ -301,8 +301,6 @@ module Softcover
           # There's not actually any math, so return nil.
           return nil
         end
-        # Remove all the unneeded raw TeX displays.
-        source.css('script').each(&:remove)
         # Remove all the MathJax preview spans.
         source.css('MathJax_Preview').each(&:remove)
         # Suck out all the SVGs
@@ -379,13 +377,27 @@ module Softcover
           png = Nokogiri::XML::Node.new('img', source)
           png['src']   = File.join('images', 'texmath',
                                    File.basename(png_filename))
-          png['alt']   = png_filename.sub('.png', '')
+          # For inline math TeX source is in a sibling script of type "math/tex"
+          script_tag = frame.parent.at('script[type="math/tex"]')
+          if script_tag.nil?
+            # For display math the script tag is a sibling of the parent
+            script_tag = frame.parent.parent.at('script[type="math/tex; mode=display"]')
+          end
+          if script_tag
+            # set image alt attribute to LaTeX source (for accessibility)
+            png['alt'] = script_tag.text.strip
+          else
+            png['alt'] = png_filename.sub('.png', '')
+          end
+          # set image style using info calculated above
           png['style'] = 'height:' + png_height + ';'
           if png_valign
             png['style'] += ' vertical-align:' + png_valign + ';'
           end
           svg.replace(png)
         end
+        # Remove all the unneeded raw TeX displays.
+        source.css('script').each(&:remove)
         # Make references relative.
         source.css('a.hyperref').each do |ref_node|
           ref_node['href'] = ref_node['href'].sub('.html',
