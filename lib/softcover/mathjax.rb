@@ -27,6 +27,12 @@ module Softcover
       MathJax.Hub.Config({
         "HTML-CSS": {
           availableFonts: ["TeX"],
+          preferredFont: "TeX",
+          webFont: "TeX",
+          imageFont: null
+        },
+        SVG: {
+          font: "TeX"
         },
         TeX: {
           extensions: ["AMSmath.js", "AMSsymbols.js", "color.js", "cancel.js", "mhchem.js"],
