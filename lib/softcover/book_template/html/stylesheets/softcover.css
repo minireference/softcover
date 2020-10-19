@@ -476,3 +476,78 @@ body #book {
 #book span.intersentencespace {
   margin-right: 0.2em;
 }
+
+
+
+
+/* MINIREF PROBLEMS AND EXERCISES STYLING */
+
+#book div.miniref-hint {
+  margin-top: 0.4em;
+}
+
+#book div.miniref-hint:before {
+  content:"Hint: ";
+}
+
+
+/* EXERCISES */
+
+#book div.miniref-exercise div.multicols strong {
+  margin-left: 2em;
+  margin-right: 0.4em;
+}
+
+#book div.miniref-exercise {
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+}
+
+#book div.miniref-exercise > ol {
+  list-style-type: lower-latin;
+}
+
+#book div.miniref-exercise > ul {
+  margin-block-start: 0.1em;
+  margin-block-end: 0em;
+  padding-inline-start: 0.6em;
+}
+
+#book div.miniref-exercise > ul > label {
+  float: left;
+}
+
+#book div.miniref-exercise > ul > li {
+  list-style: none;
+}
+
+
+/* ROBLEMS */
+
+#book div.miniref-problem div.multicols strong {
+  margin-left: 2em;
+  margin-right: 0.4em;
+}
+
+#book div.miniref-problem {
+  margin-top: 1.3em;
+  margin-bottom: 1.3em;
+}
+
+#book div.miniref-problem > ol {
+  list-style-type: lower-latin;
+}
+
+#book div.miniref-problem > ul {
+  margin-block-start: 0.1em;
+  margin-block-end: 0em;
+  padding-inline-start: 0.6em;
+}
+
+#book div.miniref-problem > ul > label {
+  float: left;
+}
+
+#book div.miniref-problem > ul > li {
+  list-style: none;
+}
