@@ -195,7 +195,7 @@ body #book {
   text-align: center;
 }
 
-#book .graphics.image img {
+#book .graphics img {
   margin-top: 2em;
   max-width: 100%
 }
