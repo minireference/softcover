@@ -43,7 +43,33 @@ module Softcover
           Macros: {
             PolyTeX:    "Poly{\\\\TeX}",
             PolyTeXnic: "Poly{\\\\TeX}nic",
-            texttt: ['{#1}',1],
+            texttt: ['{#1}', 1],
+            // FROM MATH & PHYS BOOK
+            eqdef: "\\\\stackrel{\\\\scriptscriptstyle\\\\text{def}}{=}",
+            cotan: "\\\\textrm{cotan}",
+            sech: "\\\\textrm{sech}",
+            button: ["\\\\boxed{\\\\,#1\\\\phantom{\\\\small l}\\\\!}", 1],
+            scalebox: ["{#2}", 2],
+            octagon: "\\\\textrm{octagon}",
+            ds: "\\\\displaystyle",
+            efrac: ["\\\\frac{#1}{#2}", 2],
+            qedsymbol: "\\\\square",
+            // FROM LA BOOK
+            mathbbm: ["\\\\mathbb{#1}", 1],
+            sfT: "{\\\\mathsf{T}}",
+            colvec: ["\\\\left[\\\\begin{array}{c} #1 \\\\end{array}\\\\right]", 1],
+            Tr: "\\\\textrm{Tr}",
+            tensor: ["\\\\sideset{{#1}}{#3}{#2}", 3, ""],
+            lightning: "\\\\leadsto",
+            // PROB
+            psub: ["#1_{#2\\\\!}", 2, "p"],
+            musub: ["#1_{#2\\\\!}", 2, "\\\\mu"],
+            myepsdice: ["\\\\boxed{#1}", 1],
+            // QUANTUM
+            bra: ["\\\\langle #1|", 1],
+            ket: ["|#1 \\\\rangle", 1],
+            braket: ["\\\\langle #1 \\\\rangle", 1],
+            ketbra: ["\\\\ket{#1}\\\\bra{#2}", 2],
             #{custom_macros}
           }
         },
