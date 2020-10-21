@@ -10,6 +10,6 @@ aside: Box
 listing: Listing
 equation: Equation
 eq: Eq
-frontmatter: FrontMatter
-backmatter: BackMatter
+frontmatter: Frontmatter
+backmatter: Backmatter
 contents: Contents
