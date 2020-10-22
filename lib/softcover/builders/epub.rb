@@ -363,7 +363,6 @@ module Softcover
             end
             # Generate png from the MathJax_SVG using Inkscape
             # Use the -h option to get image with desired height (in pixels)
-            quality of resulting  high-res image (at the cost of file size)
             cmd = "#{inkscape} #{svg_abspath} -o #{png_abspath} -h #{h}"
             if options[:silent]
               silence { silence_stream(STDERR) { system cmd } }
