@@ -44,7 +44,6 @@ module Softcover
           Macros: {
             PolyTeX:    "Poly{\\\\TeX}",
             PolyTeXnic: "Poly{\\\\TeX}nic",
-            texttt: ['{#1}', 1],
             // FROM MATH & PHYS BOOK
             eqdef: "\\\\stackrel{\\\\scriptscriptstyle\\\\text{def}}{=}",
             cotan: "\\\\textrm{cotan}",
@@ -60,7 +59,7 @@ module Softcover
             sfT: "{\\\\mathsf{T}}",
             colvec: ["\\\\left[\\\\begin{array}{c} #1 \\\\end{array}\\\\right]", 1],
             Tr: "\\\\textrm{Tr}",
-            tensor: ["\\\\sideset{{#1}}{#3}{#2}", 3, ""],
+            tensor: ["_{#1}{\\\\!#2}_{#3}", 3, ""],
             lightning: "\\\\leadsto",
             // PROB
             psub: ["#1_{#2\\\\!}", 2, "p"],
