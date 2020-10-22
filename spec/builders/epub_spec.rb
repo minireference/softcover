@@ -66,7 +66,7 @@ describe Softcover::Builders::Epub do
         it "should have the right TOC chapter refs" do
           toc_refs = doc.css('itemref').map { |node| node['idref'] }
           expect(toc_refs).to eq %w[cover frontmatter a_chapter another_chapter
-                                    yet_another_chapter]
+                                    yet_another_chapter backmatter]
         end
 
         it "should have the right title" do
@@ -123,7 +123,8 @@ describe Softcover::Builders::Epub do
       it "should contain the right filenames in the right order" do
         filenames = %w[frontmatter_fragment.xhtml a_chapter_fragment.xhtml
                        another_chapter_fragment.xhtml
-                       yet_another_chapter_fragment.xhtml]
+                       yet_another_chapter_fragment.xhtml
+                       backmatter_fragment.xhtml]
         source_files = doc.css('content').map { |node| node['src'] }
         expect(source_files).to eql(filenames)
       end

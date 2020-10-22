@@ -26,7 +26,7 @@ describe Softcover::Book do
 
         it "has rendered latex in menu_heading" do
           expect(subject.chapter_attributes.last[:menu_heading]).
-            to match /<em>/
+            to match /Backmatter/
         end
       end
 
