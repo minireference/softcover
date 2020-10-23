@@ -518,6 +518,10 @@ body #book {
   content:"Hint: ";
 }
 
+#book ol.ansparts-star {
+  list-style-type: lower-latin;
+}
+
 
 /* EXERCISES */
 
