@@ -26,6 +26,7 @@ module Softcover
 
       config = <<-EOS
       MathJax.Hub.Config({
+        extensions: ["tex2jax.js", "MathMenu.js", "MathZoom.js", "fast-preview.js"],
         "HTML-CSS": {
           availableFonts: ["TeX"],
           preferredFont: "TeX",
@@ -60,7 +61,7 @@ module Softcover
             sfT: "{\\\\mathsf{T}}",
             colvec: ["\\\\left[\\\\begin{array}{c} #1 \\\\end{array}\\\\right]", 1],
             Tr: "\\\\textrm{Tr}",
-            tensor: ["{_{#1}{\\\\!#2}_{#3}}", 3, ""],
+            tensor: ["{\\\\vphantom{#2}#1\\\\!{#2}#3}", 3, ""],
             lightning: "\\\\leadsto",
             // PROB
             psub: ["#1_{#2\\\\!}", 2, "p"],
@@ -76,8 +77,7 @@ module Softcover
         },
         showProcessingMessages: false,
         messageStyle: "none",
-        imageFont: null,
-        "AssistiveMML": { disabled: true }
+        imageFont: null
       });
       EOS
       config
