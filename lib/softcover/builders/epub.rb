@@ -582,7 +582,7 @@ module Softcover
 </head>
 <body>
   <div id="cover">
-     <img src="images/#{cover_img}" alt="cover" style="width:100%;" />
+     <img src="images/#{cover_img}" alt="cover" style="height:100%;" />
   </div>
 </body>
 </html>
