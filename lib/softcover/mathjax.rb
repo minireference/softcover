@@ -77,7 +77,8 @@ module Softcover
         },
         showProcessingMessages: false,
         messageStyle: "none",
-        imageFont: null
+        imageFont: null,
+        "AssistiveMML": { disabled: true }
       });
       EOS
       config
