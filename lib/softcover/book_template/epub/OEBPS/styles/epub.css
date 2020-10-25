@@ -113,3 +113,14 @@ li p {
 div.equation img {
   max-width: 100%;
 }
+
+
+/* force new page before frontmatter chapters */
+
+div#frontmatter div.chapter-star {
+  page-break-before: always;
+}
+
+div#backmatter div.chapter-star {
+  page-break-before: always;
+}

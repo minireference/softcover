@@ -386,10 +386,6 @@ body #book {
   line-height: 1;
 }
 
-#book a:hover.heading {
-  text-decoration: underline;
-}
-
 #book .aside {
   border: 1px solid #999;
   padding: 0.5em;
@@ -439,7 +435,7 @@ body #book {
   padding-top: 1.2em;
 }
 
-#book #table_of_contents li.chapter-star.backmatter-start{
+#book #table_of_contents li.chapter-star.backmatter-start {
   padding-top: 1.2em;
 }
 
